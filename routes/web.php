@@ -6,6 +6,8 @@ use App\Http\Controllers\Web\DashboardController;
 use App\Http\Controllers\Web\Auth\LoginController;
 use App\Http\Controllers\Web\Banners\BannerController;
 use App\Http\Controllers\Web\Products\OrderController;
+use App\Http\Controllers\Web\Bank\BankController;
+use App\Http\Controllers\Web\Messages\MessageController;
 use App\Http\Controllers\Web\Products\CouponController;
 use App\Http\Controllers\Web\Setting\SettingController;
 use App\Http\Controllers\Web\Products\ProductController;
@@ -61,6 +63,13 @@ Route::middleware(['auth', 'role:admin|visitor|root'])->group(function () {
     Route::post('/customers', [CustomerController::class, 'store'])->name('customer.store')->middleware('onlyAdmin');
     Route::get('/customers/{customer}/edit', [CustomerController::class, 'edit'])->name('customer.edit');
     Route::put('/customers/{customer}', [CustomerController::class, 'update'])->name('customer.update')->middleware('onlyAdmin');
+
+
+    //Bank Routes
+    Route::get('/bank-list', [BankController::class, 'index'])->name('bank.index');
+
+    //Message Routes
+    Route::get('/message-list', [MessageController::class, 'index'])->name('messages.index');
 
     // Product routes
     Route::get('/products', [ProductController::class, 'index'])->name('product.index');

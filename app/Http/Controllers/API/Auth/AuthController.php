@@ -34,7 +34,6 @@ class AuthController extends Controller
     public function register(RegistrationRequest $request)
     {
         $contact = \formatMobile($request->mobile);
-
         $user = $this->userRepo->registerUser($request);
 
         $verificationCode = $this->verificationCodeRepo->findOrCreateByContact($contact);
@@ -110,7 +109,7 @@ class AuthController extends Controller
     public function resendOTP(ReSendOtpRequest $request)
     {
         $contact = \formatMobile($request->contact);
-        $user = $this->userRepo->findByContact($contact);
+        $user = $this->userRepo->findByLastName($contact);
 
         if($user){
             $verificationCode = $this->verificationCodeRepo->findOrCreateByContact($contact);

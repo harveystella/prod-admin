@@ -59,6 +59,13 @@ class UserRepository extends Repository
             ->first();
     }
 
+    public function findByLastName($contact)
+    {
+        return $this->model()::where('last_name', $contact)
+            ->orWhere('email', $contact)->isActive()
+            ->first();
+    }
+
     public function getAccessToken(User $user)
     {
         $token = $user->createToken('user token');

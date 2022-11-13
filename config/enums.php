@@ -34,8 +34,7 @@ return [
 
     'settings' => [
         'privacy-policy' => 'Privacy Policy',
-        'trams-of-service' => 'Trams of service',
-        'contact-us' => 'Contact us',
+        'terms-of-service' => 'Terms of Service',
         'about-us' => 'About Us'
     ],
 

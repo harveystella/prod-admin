@@ -158,6 +158,30 @@ td .badge {
 }
 
 
+/* DataTables */
+ div.dataTables_wrapper div.dataTables_filter  {
+    text-align: right !important;
+}
+.dt-buttons {
+    display: none;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    color: #fff !important;
+    background-color: #01a9b0 !important;
+}
+
+.export-btns {
+    margin: 9px 15px 0 27px;
+    float: right;
+}
+
+.dataTables_length {
+    margin-top: 40px !important;
+}
+
+
 /* Slide */
 
 .sidebar_open {

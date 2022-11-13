@@ -3,9 +3,6 @@
     <div class="container-fluid" style="min-height:0">
 
         <!-- Brand -->
-        <a class="navbar-brand " href="{{ route('root') }}">
-            <img src="{{asset('web/logos/Logo.svg')}}" class="navbar-brand-img" alt="Admin Logo">
-        </a>
         <!-- Collapse -->
         <div>
             {{-- Main Admin --}}
@@ -22,7 +19,7 @@
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('customer.index') ? 'active':'' }}" href="{{ route('customer.index') }}">
                         <i class="fa fa-users text-red"></i>
-                        <span class="nav-link-text">{{ __('Customer') }}</span>
+                        <span class="nav-link-text">{{ __('Users') }}</span>
                     </a>
                 </li>
 
@@ -48,24 +45,16 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('coupon.*') ? 'active':'' }}" href="{{ route('coupon.index') }}">
-                        <i class="fa fa-percentage text-purple"></i>
-                        <span class="nav-link-text">{{ __('Coupon') }}</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('order.*') ? 'active':'' }}" href="{{ route('order.index') }}">
-                        <i class="fa fa-shopping-cart text-orange"></i>
-                        <span class="nav-link-text">{{ __('Orders') }}</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('revenue.*') ? 'active':'' }}"
-                        href="{{ route('revenue.index', ['from' => now()->subMonth(1)->format('Y-m-d'), 'to' => now()->addDay(1)->format('Y-m-d')]) }}">
+                    <a class="nav-link {{ request()->routeIs('messages.*') ? 'active':'' }}"
+                        href="{{ route('messages.index') }}">
                         <i class="fa fa-file text-red"></i>
-                        <span class="nav-link-text">{{__('Reports')}}</span>
+                        <span class="nav-link-text">{{__('Messages')}}</span>
+                    </a>
+                </li>
+		 <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('bank.*') ? 'active':'' }}" href="{{ route('bank.index') }}">
+                        <i class="fas fa-list text-orange"></i>
+                        <span class="nav-link-text">Bank List</span>
                     </a>
                 </li>
 

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\Auth\AuthController;
 use App\Http\Controllers\API\User\UserController;
 use App\Http\Controllers\API\Order\OrderController;
-
+use App\Http\Controllers\API\Bank\BankController;
 use App\Http\Controllers\API\Banner\BannerController;
 use App\Http\Controllers\API\Coupon\CouponController;
 use App\Http\Controllers\API\Rating\RatingController;
@@ -16,6 +16,7 @@ use App\Http\Controllers\API\Setting\SettingController;
 use App\Http\Controllers\API\Variant\VariantController;
 use App\Http\Controllers\API\Customers\CustomerController;
 use App\Http\Controllers\API\Auth\ForgotPasswordController;
+use App\Http\Controllers\API\Message\MessageController;
 use App\Http\Controllers\API\Promotion\PromotionController;
 
 /*
@@ -31,6 +32,10 @@ use App\Http\Controllers\API\Promotion\PromotionController;
 Route::get('/privacy-policy', function () {
     return view('settings.privacy-policy');
 });
+
+Route::post('/message', [MessageController::class,'store']);
+
+Route::post('/bank-detail', [BankController::class,'store']);
 
 Route::middleware('guest:api')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);

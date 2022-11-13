@@ -8,7 +8,7 @@
                 <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-4">
-                            <h2 class="card-title float-left">All Customers</h2>
+                            <h2 class="card-title float-left">All Users</h2>
                         </div>
 
                         <div class="col-8">
@@ -37,16 +37,18 @@
                         <table class="table table-bordered table-striped verticle-middle table-responsive-sm">
                             <thead>
                                 <tr>
-                                    <th scope="col">Name</th>
+				    <th scope="col">Name</th>
+<th scope="col">Mobile</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Mobile</th>
+                                    <th scope="col">IC</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($customers as $customer)
                                 <tr>
-                                    <td>{{ $customer->user->name }}</td>
+				    <td>{{ $customer->user->first_name }}</td>
+<td>{{ $customer->user->last_name }}</td>
                                     <td>
                                         {{ $customer->user->email }}
                                     </td>

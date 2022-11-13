@@ -11,11 +11,16 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" type="text/css">
     <link rel="stylesheet" href="{{ asset('web/css/all.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('web/css/bootstrap.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('web/css/custom.css') }}" type="text/css">
-
+<style>
+div.dataTables_wrapper div.dataTables_paginate {
+        margin:5px !important;
+}
+</style>
 </head>
 <body>
 
@@ -33,14 +38,14 @@
 
         @yield('content')
 
-    </div>
-
+   </div>
     <script src="{{ asset('web/js/jquery.min.js') }}"></script>
     <script src="{{ asset('web/js/popper.js') }}"></script>
     <script src="{{ asset('web/js/sweet-alert.js') }}"></script>
     <script src="{{ asset('web/js/bootstrap.min.js') }}"></script>
 
-    <script src="{{ asset('web/js/argon.js') }}"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+   <script src="{{ asset('web/js/argon.js') }}"></script>
     <script src="{{ asset('web/js/main.js') }}"></script>
 
     @if (session('visitor'))
@@ -54,5 +59,11 @@
     @endif
 
     @stack('scripts')
+ <script>
+$('#myTable').DataTable({
+"pageLength": 50,
+"order":[]	
+});
+    </script>
 </body>
 </html>
